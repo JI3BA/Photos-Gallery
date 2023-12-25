@@ -1,9 +1,10 @@
 import styles from './page.module.css'
+import PhotosList from "@/components/PhotosList/PhotosList";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-
+      <PhotosList />
     </main>
   )
 }
