@@ -23,10 +23,8 @@ const PhotosList = () => {
             const res = await fetch(`https://api.unsplash.com/photos?client_id=${ACCESS_TOKEN}&page=1`);
             const data = await res.json();
             setPhotos(data)
-            setLoading(false)
         } catch (err) {
             setError(err.message)
-            setLoading(false)
         }
     };
 
