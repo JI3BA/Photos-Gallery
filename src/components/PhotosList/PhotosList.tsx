@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import Photos from "@/components/Photos/Photos";
 import type {Photo} from "@/models/PhotoType";
 import Loader from "@/components/Loader/Loader";
+import Filter from "@/components/Filter/Filter";
 
 const ACCESS_TOKEN = ''
 
@@ -19,20 +20,27 @@ const PhotosList = () => {
     }, [])
 
     const getPhotos = async () => {
-        try {
-            const res = await fetch(`https://api.unsplash.com/photos?client_id=${ACCESS_TOKEN}&page=1`);
-            const data = await res.json();
+        const res = await fetch(`https://api.unsplash.com/photos?client_id=${ACCESS_TOKEN}&page=1`);
+
+        const data = await res.json();
+
+        if(res.ok){
             setPhotos(data)
-        } catch (err) {
-            setError(err.message)
+        }else{
+            setError(data.errors)
+            setLoading(false)
         }
     };
+
 
     return(
         <div className={s.container}>
             <div className={g.wrapper}>
+                <Filter />
                 {loading ? <Loader />
                 : <Photos photos={photos} />}
+
+                {!!error && <span>{error}</span>}
             </div>
         </div>
     )
