@@ -26,6 +26,7 @@ const PhotosList = () => {
 
         if(res.ok){
             setPhotos(data)
+            setLoading(false)
         }else{
             setError(data.errors)
             setLoading(false)
@@ -37,10 +38,9 @@ const PhotosList = () => {
         <div className={s.container}>
             <div className={g.wrapper}>
                 <Filter />
-                {loading ? <Loader />
-                : <Photos photos={photos} />}
+                {loading ? <Loader /> : <Photos photos={photos} />}
 
-                {!!error && <span>{error}</span>}
+                {!!error && <span className={s.error}>{error}</span>}
             </div>
         </div>
     )
