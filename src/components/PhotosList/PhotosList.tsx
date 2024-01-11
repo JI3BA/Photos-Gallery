@@ -40,7 +40,7 @@ const PhotosList = () => {
                 <Filter />
                 {loading ? <Loader /> : <Photos photos={photos} />}
 
-                {!!error && <span className={s.error}>{error}</span>}
+                {!!error && <p className={s.error}>{error}</p>}
             </div>
         </div>
     )
