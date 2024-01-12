@@ -1,3 +1,7 @@
+.photos__container{
+    margin-top: 20px;
+}
+
 .image{
     object-fit: contain;
     padding: 5px;
