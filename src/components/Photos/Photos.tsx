@@ -1,11 +1,17 @@
 import type {Photo} from "@/models/PhotoType";
-import s from '../../styles/Photos.module.css'
+import s from './Photos.module.css'
+import {FC} from "react";
 
-const Photos = (photos) => {
+type PhotoType = {
+    photos: Photo[]
+}
+
+const Photos: FC<PhotoType> = ({photos}) => {
+
     return(
-        <>
-            {photos.length && photos.map((photo: Photo) => <img className={s.image} key={photo.id} src={photo.urls.thumb} alt={photo.description}/>)}
-        </>
+        <div className={s.photos__container}>
+            {photos && photos.map((photo: Photo) => <img className={s.image} key={photo.id} src={photo.urls.small} alt={photo.description}/>)}
+        </div>
     )
 }
 
