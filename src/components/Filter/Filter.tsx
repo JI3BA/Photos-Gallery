@@ -1,5 +1,5 @@
 import {FC, MouseEvent} from "react";
-import s from '../../styles/Filter.module.css'
+import s from './Filter.module.css'
 
 const Filter: FC = () => {
 
