@@ -1,6 +1,6 @@
 'use client'
 
-import s from '../../styles/PhotosList.module.css'
+import s from './PhotosList.module.css'
 import g from '../../app/globals.css'
 import {useEffect, useState} from "react";
 import Photos from "@/components/Photos/Photos";
