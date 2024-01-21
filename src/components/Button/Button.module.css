@@ -1,0 +1,19 @@
+.button{
+    margin-left: 15px;
+    padding: 5px 10px;
+    background: transparent;
+    border: 2px solid #8a8a8a;
+    color: #8a8a8a;
+    transform: scale(1);
+    cursor: pointer;
+    transition: border .5s,color .5s, transform .5s;
+}
+
+.button:hover{
+    border: 2px solid #565656;
+    color: #565656;
+}
+
+.button:active{
+    transform: scale(.95);
+}
