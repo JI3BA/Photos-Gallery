@@ -14,13 +14,14 @@ const PhotosList = () => {
     const [photos, setPhotos] = useState<Photo[]>([])
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string>('')
+    const [page, setPage] = useState<number>(1)
 
     useEffect(() => {
         getPhotos()
     }, [])
 
     const getPhotos = async () => {
-        const res = await fetch(`https://api.unsplash.com/photos?client_id=${ACCESS_TOKEN}&page=1`);
+        const res = await fetch(`https://api.unsplash.com/photos?client_id=${ACCESS_TOKEN}&page=${page}`);
 
         const data = await res.json();
 
