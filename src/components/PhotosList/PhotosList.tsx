@@ -7,6 +7,7 @@ import Photos from "@/components/Photos/Photos";
 import type {Photo} from "@/models/PhotoType";
 import Loader from "@/components/Loader/Loader";
 import Filter from "@/components/Filter/Filter";
+import Button from "@/components/Button/Button";
 
 const ACCESS_TOKEN = ''
 
@@ -34,13 +35,27 @@ const PhotosList = () => {
         }
     };
 
+    const onClickHandler = (name: string) => {
+        console.log(name)
+    }
 
     return(
         <div className={s.container}>
             <div className={g.wrapper}>
                 <Filter />
 
-                {loading ? <Loader /> : <Photos photos={photos} />}
+                {loading ?
+                    <Loader/>
+                    :
+                    <>
+                        <Photos photos={photos}/>
+
+                        <div className={s.buttons}>
+                            <Button onClick={() => onClickHandler('prev')}>prev</Button>
+                            <Button onClick={() => onClickHandler('next')}>next</Button>
+                        </div>
+                    </>
+                }
 
                 {!!error && <p className={s.error}>{error}</p>}
             </div>
