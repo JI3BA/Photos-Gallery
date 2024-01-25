@@ -44,8 +44,13 @@ const PhotosList = () => {
             <div className={g.wrapper}>
                 <Filter />
 
-                {loading ?
+                {loading
+                    ?
                     <Loader/>
+                    :
+                    !!error
+                    ?
+                    <p className={s.error}>{error}</p>
                     :
                     <>
                         <Photos photos={photos}/>
@@ -56,8 +61,6 @@ const PhotosList = () => {
                         </div>
                     </>
                 }
-
-                {!!error && <p className={s.error}>{error}</p>}
             </div>
         </div>
     )
