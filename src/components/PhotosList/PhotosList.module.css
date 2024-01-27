@@ -9,6 +9,11 @@
     color: red;
 }
 
-.buttons{
+.switch{
     display: flex;
+    justify-content: center;
+}
+
+.switch__button{
+    padding: 20px 200px;
 }
