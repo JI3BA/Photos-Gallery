@@ -55,9 +55,9 @@ const PhotosList = () => {
                     <>
                         <Photos photos={photos}/>
 
-                        <div className={s.buttons}>
-                            <Button onClick={() => onClickHandler('prev')}>prev</Button>
-                            <Button onClick={() => onClickHandler('next')}>next</Button>
+                        <div className={s.switch}>
+                            <Button className={s.switch__button} onClick={() => onClickHandler('prev')}>prev</Button>
+                            <Button className={s.switch__button} onClick={() => onClickHandler('next')}>next</Button>
                         </div>
                     </>
                 }
