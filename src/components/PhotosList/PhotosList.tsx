@@ -19,7 +19,8 @@ const PhotosList = () => {
 
     useEffect(() => {
         getPhotos()
-    }, [])
+    }, [page])
+
 
     const getPhotos = async () => {
         const res = await fetch(`https://api.unsplash.com/photos?client_id=${ACCESS_TOKEN}&page=${page}`);
@@ -36,7 +37,11 @@ const PhotosList = () => {
     };
 
     const onClickHandler = (name: string) => {
-        console.log(name)
+        if(name === 'prev') {
+            setPage(prev => prev - 1)
+        }else{
+            setPage(prev => prev + 1)
+        }
     }
 
     return(
