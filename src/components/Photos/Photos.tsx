@@ -10,7 +10,7 @@ const Photos: FC<PhotoType> = ({photos}) => {
 
     return(
         <div className={s.photos__container}>
-            {photos && photos.map((photo: Photo) => <img className={s.image} key={photo.id} src={photo.urls.small} alt={photo.description}/>)}
+            {photos && photos.map((photo: Photo) => <div key={photo.id} className={s.box}><img className={s.box__image} src={photo.urls.small} alt={photo.description}/></div>)}
         </div>
     )
 }
