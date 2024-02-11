@@ -8,6 +8,7 @@ import type {Photo} from "@/models/PhotoType";
 import Loader from "@/components/Loader/Loader";
 import Filter from "@/components/Filter/Filter";
 import Button from "@/components/Button/Button";
+import type {PaginationType} from "@/models/PaginationType";
 
 const ACCESS_TOKEN = ''
 
@@ -36,7 +37,7 @@ const PhotosList = () => {
         }
     };
 
-    const onClickHandler = (name: string) => {
+    const onClickHandler = (name: PaginationType) => {
         if(name === 'prev') {
             setPage(prev => prev - 1)
         }else{
