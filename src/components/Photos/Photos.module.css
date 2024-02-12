@@ -15,4 +15,11 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    filter: blur(0);
+    cursor: pointer;
+    transition: filter .5s;
+}
+
+.box__image:hover{
+    filter: blur(2px);
 }
