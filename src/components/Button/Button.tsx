@@ -4,7 +4,7 @@ import s from './Button.module.css'
 type ButtonType = {
     children: ReactNode,
     onClick: MouseEventHandler<HTMLButtonElement>,
-    className: string
+    className?: string
 }
 
 const Button: FC<ButtonType> = ({children, onClick, className}) => {
