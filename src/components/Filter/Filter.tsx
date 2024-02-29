@@ -15,9 +15,6 @@ const Filter: FC = () => {
                 <input type="text" className={s.form__input}/>
                 <Button onClick={onClickHandler}>Search</Button>
             </form>
-
-            <Button className={s.favorite} onClick={() => console.log('click favorites')}>favorites <span className={s.favorite__text}>{favorite}</span></Button>
-
         </>
     )
 }
