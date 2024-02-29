@@ -1,10 +1,8 @@
-import {FC, MouseEvent, useState} from "react";
+import {FC, MouseEvent} from "react";
 import s from './Filter.module.css'
 import Button from "@/components/Button/Button";
 
 const Filter: FC = () => {
-    const [favorite, setFavorite] = useState<number>(0)
-
     const onClickHandler = (e: MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
     }
