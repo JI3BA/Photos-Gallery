@@ -3,7 +3,7 @@ import s from './Button.module.css'
 
 type ButtonType = {
     children: ReactNode,
-    onClick: MouseEventHandler<HTMLButtonElement>,
+    onClick?: MouseEventHandler<HTMLButtonElement>,
     className?: string
 }
 
