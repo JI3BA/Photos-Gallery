@@ -1,6 +1,7 @@
 import type {Photo} from "@/models/PhotoType";
 import s from './Photos.module.css'
 import {FC} from "react";
+import Link from "next/link";
 
 type PhotoType = {
     photos: Photo[]
@@ -10,6 +11,8 @@ const Photos: FC<PhotoType> = ({photos}) => {
 
     return(
         <div className={s.photos__container}>
+            <Link className='link' href={{pathname: '/favorites'}}>Favorites</Link>
+            
             {photos && photos.map((photo: Photo) => {
                 return(
                     <div key={photo.id} className={s.box}>
