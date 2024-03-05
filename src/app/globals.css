@@ -9,3 +9,10 @@
   width: 100%;
   display: flex;
 }
+
+.link{
+  text-decoration: none;
+  color: #8a8a8a;
+  padding: 5px;
+  border: 1px solid #8a8a8a;
+}
