@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function FavoritesLayout({
 children,
 }:{
@@ -7,9 +5,7 @@ children,
 }) {
     return (
         <div>
-            <div>
-                {children}
-            </div>
+            {children}
         </div>
     )
 }
