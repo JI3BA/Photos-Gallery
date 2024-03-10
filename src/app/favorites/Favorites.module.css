@@ -1,0 +1,9 @@
+.favorites {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.favorites__link{
+    margin: 50px
+}
