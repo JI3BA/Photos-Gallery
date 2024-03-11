@@ -10,7 +10,7 @@ const Filter: FC = () => {
     return(
         <>
             <form className={s.form}>
-                <input type="text" className={s.form__input}/>
+                <input type="text" placeholder='categories' className={s.form__input}/>
                 <Button onClick={onClickHandler}>Search</Button>
             </form>
         </>
