@@ -1,6 +1,6 @@
 import type {Photo} from "@/models/PhotoType";
 import s from './Photos.module.css'
-import {FC} from "react";
+import {FC, useState} from "react";
 import Link from "next/link";
 
 type PhotoType = {
@@ -8,6 +8,7 @@ type PhotoType = {
 }
 
 const Photos: FC<PhotoType> = ({photos}) => {
+    const [favorites, setFavorites] = useState<Photo[]>([])
 
     return(
         <div className={s.photos__container}>
