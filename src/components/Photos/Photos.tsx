@@ -12,7 +12,7 @@ const Photos: FC<PhotoType> = ({photos}) => {
 
     return(
         <div className={s.photos__container}>
-            <Link className='link' href={{pathname: '/favorites'}}>Favorites</Link>
+            <Link className='link' href={{pathname: '/favorites'}}>Favorites {favorites.length}</Link>
             
             {photos && photos.map((photo: Photo) => {
                 return(
