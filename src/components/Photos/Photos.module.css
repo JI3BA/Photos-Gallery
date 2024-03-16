@@ -42,3 +42,7 @@
 .svg:hover{
     fill: #e70707;
 }
+
+.photos__link{
+    margin: 10px;
+}
