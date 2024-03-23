@@ -1,6 +1,6 @@
 import type {Photo} from "@/models/PhotoType";
 import s from './Photos.module.css'
-import {FC, useState} from "react";
+import {FC} from "react";
 import Link from "next/link";
 
 type PhotoType = {
@@ -8,11 +8,9 @@ type PhotoType = {
 }
 
 const Photos: FC<PhotoType> = ({photos}) => {
-    const [favorites, setFavorites] = useState<Photo[]>([])
-
     return(
         <div className="photos">
-            <Link className={`link ${s.photos__link}`} href={{pathname: '/favorites'}}>Favorites {favorites.length}</Link>
+            <Link className={`link ${s.photos__link}`} href={{pathname: '/favorites'}}>Favorites</Link>
 
             <div className={s.photos__container}>
                 {photos && photos.map((photo: Photo) => {
