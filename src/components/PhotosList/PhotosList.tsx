@@ -9,7 +9,6 @@ import Loader from "@/components/Loader/Loader";
 import Filter from "@/components/Filter/Filter";
 import Button from "@/components/Button/Button";
 import type {PaginationType} from "@/models/PaginationType";
-import FavoriteContext from "@/context/FavoriteContext/FavoriteContext";
 
 const ACCESS_TOKEN = ''
 
@@ -18,8 +17,6 @@ const PhotosList = () => {
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string>('')
     const [page, setPage] = useState<number>(1)
-
-    const [favorite, setFavorite] = useState<Photo[]>([])
 
     useEffect(() => {
         getPhotos()
@@ -49,31 +46,29 @@ const PhotosList = () => {
     }
 
     return(
-        <FavoriteContext.Provider value={favorite}>
-            <div className={s.container}>
-                <div className={g.wrapper}>
-                    <Filter />
+        <div className={s.container}>
+            <div className={g.wrapper}>
+                <Filter />
 
-                    {loading
+                {loading
+                    ?
+                    <Loader/>
+                    :
+                    !!error
                         ?
-                        <Loader/>
+                        <p className={s.error}>{error}</p>
                         :
-                        !!error
-                            ?
-                            <p className={s.error}>{error}</p>
-                            :
-                            <>
-                                <Photos photos={photos}/>
+                        <>
+                            <Photos photos={photos}/>
 
-                                <div className={s.switch}>
-                                    <Button className={s.switch__button} onClick={() => onClickHandler('prev')}>prev</Button>
-                                    <Button className={s.switch__button} onClick={() => onClickHandler('next')}>next</Button>
-                                </div>
-                            </>
-                    }
-                </div>
+                            <div className={s.switch}>
+                                <Button className={s.switch__button} onClick={() => onClickHandler('prev')}>prev</Button>
+                                <Button className={s.switch__button} onClick={() => onClickHandler('next')}>next</Button>
+                            </div>
+                        </>
+                }
             </div>
-        </FavoriteContext.Provider>
+        </div>
     )
 }
 
