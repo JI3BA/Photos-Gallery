@@ -8,7 +8,7 @@ type FavoriteContextType = {
     setFavorite: (value: Photo[]) => void;
 };
 
-const FavoriteContext = createContext<FavoriteContextType>({
+export const FavoriteContext = createContext<FavoriteContextType>({
     favorite: [],
     setFavorite: () => {}
 });
