@@ -1,5 +1,6 @@
 import Link from "next/link";
 import s from "./Favorites.module.css"
+import FavoritePhotos from "@/components/FavoritePhotos/FavoritePhotos";
 
 
 export default function Favorites(){
@@ -7,6 +8,7 @@ export default function Favorites(){
         <div className={s.favorites}>
             <div className='wrapper'>
                 <Link className={`link ${s.favorites__link}`} href='/'>Main</Link>
+                <FavoritePhotos />
             </div>
         </div>
     )
