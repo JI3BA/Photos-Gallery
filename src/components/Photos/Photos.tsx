@@ -22,7 +22,7 @@ const Photos: FC<PhotoType> = ({photos}) => {
     }
 
     return(
-        <div className="photos">
+        <div>
             <Link className={`link ${s.photos__link}`} href={{pathname: '/favorites'}}>Favorites {favorite.length}</Link>
 
             <div className={s.photos__container}>
