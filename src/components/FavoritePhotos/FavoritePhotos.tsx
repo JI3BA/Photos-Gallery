@@ -1,11 +1,9 @@
 'use client'
-
 import {useFavoriteContext} from "@/hooks/useFavoriteContext";
-import {FC} from "react";
 import type {Photo} from "@/models/PhotoType";
 import s from "@/components/Photos/Photos.module.css";
 
-const FavoritePhotos: FC<Photo[]> = () => {
+const FavoritePhotos = () => {
     const {favorite, setFavorite} = useFavoriteContext()
 
     return(
