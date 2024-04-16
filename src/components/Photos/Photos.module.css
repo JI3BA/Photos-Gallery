@@ -39,6 +39,15 @@
     transition: .5s;
 }
 
+.svg--active{
+    fill: #565656;
+    transition: .5s;
+}
+
+.svg--active:hover{
+    fill: #2d2d2d;
+}
+
 .svg:hover{
     fill: #e70707;
 }
