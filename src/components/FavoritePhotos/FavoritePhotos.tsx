@@ -6,6 +6,10 @@ import s from "@/components/Photos/Photos.module.css";
 const FavoritePhotos = () => {
     const {favorite, setFavorite} = useFavoriteContext()
 
+    const deleteFavoritePhoto = (id: string) => {
+        setFavorite(favorite.filter(ph => ph.id !== id))
+    }
+
     return(
         <>
             <div className={s.photos__container}>
@@ -14,7 +18,7 @@ const FavoritePhotos = () => {
                         <div key={photo.id} className={s.box}>
                             <img className={s.box__image} src={photo.urls.small} alt={photo.description}/>
 
-                            <svg className={s.box__heart} width='48px' height='48px' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg className={s.box__heart} onClick={() => deleteFavoritePhoto(photo.id)} width='48px' height='48px' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                                 <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                                 <g id="SVGRepo_iconCarrier">
