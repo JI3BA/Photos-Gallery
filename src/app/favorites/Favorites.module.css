@@ -1,9 +1,14 @@
 .favorites {
+    max-width: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.favorites__link{
+.link__wrapper{
+    padding: 30px;
+}
+
+.link__name{
     margin: 50px
 }
