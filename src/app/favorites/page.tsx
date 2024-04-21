@@ -7,7 +7,10 @@ export default function Favorites(){
     return(
         <div className={s.favorites}>
             <div className='wrapper'>
-                <Link className={`link ${s.favorites__link}`} href='/'>Main</Link>
+                <div className={s.link__wrapper}>
+                    <Link className={`link ${s.link__name}`} href='/'>Main</Link>
+                </div>
+
                 <FavoritePhotos />
             </div>
         </div>
