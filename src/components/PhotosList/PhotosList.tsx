@@ -38,11 +38,10 @@ const PhotosList = () => {
     };
 
     const onClickHandler = (name: PaginationType) => {
-        if(name === 'prev') {
+        name === 'prev' ?
             setPage(prev => prev - 1)
-        }else{
+        :
             setPage(prev => prev + 1)
-        }
     }
 
     return(
